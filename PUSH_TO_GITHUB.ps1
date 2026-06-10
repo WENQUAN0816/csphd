@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$repoName = "计算机科学博士"
+$repoName = "csphd"
 $description = "Second PhD planning notes for Computer Science, AI, spatial intelligence, and age-friendly indoor spatial world models."
 
 if (-not (Get-Command gh -ErrorAction SilentlyContinue)) {
@@ -15,4 +15,3 @@ if (-not (git remote get-url origin 2>$null)) {
 } else {
     git push -u origin main
 }
-
