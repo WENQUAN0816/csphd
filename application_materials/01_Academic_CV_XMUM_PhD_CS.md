@@ -53,6 +53,12 @@ For the proposed second PhD in Computer Science and Technology, his research goa
 - Vision-language and map-based interactive demo development
 - Multi-criteria decision-making: AHP, indicator weighting, expert validation
 
+## Selected AI/CS Manuscripts Under Review
+
+1. Quan Wen; Yanting Wu; Mazran Ismail; Muhammad Hafeez Abdul Nasir. **Meta-Learning Framework for Healthy Aging Assessment: Attentive Neural Processes with Cross-Region Generalization within CHARLS.** *Neural Networks*. Status: R1 revised submission under processing, NEUNET-D-26-01296R1; first author and corresponding author.
+
+2. Quan Wen; Mazran Ismail; Muhammad Hafeez Abdul Nasir; Nooriati Binti Taib; Jestin Bin Nordin. **Spatial fall risk prediction in elderly residential environments using 3D point cloud-derived features and ensemble learning with SHAP interpretability.** *Egyptian Informatics Journal*. Status: R1 revised submission under processing, EGIJ-D-26-00407R1; first author and corresponding author.
+
 ## Publications
 
 ### WoS SCIE/SSCI Publications
@@ -134,4 +140,3 @@ Relationship: PhD supervisor
 - Exact PhD degree conferment date and final certificate wording.
 - Whether XMUM requires certified true copies or notarized translations for Chinese degree/transcript documents.
 - Whether a second referee should be added for CS/AI-oriented application.
-

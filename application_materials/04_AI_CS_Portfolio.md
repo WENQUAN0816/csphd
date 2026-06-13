@@ -70,6 +70,11 @@ The portfolio supports application to CS&T because it can be linked to:
 - Multimodal AI and future VLM integration
 - Applied computer vision for built environment assessment
 
+## Selected AI/CS Manuscripts Currently Under Review
+
+- **Neural Networks**: *Meta-Learning Framework for Healthy Aging Assessment: Attentive Neural Processes with Cross-Region Generalization within CHARLS*. Status: R1 revised submission under processing, NEUNET-D-26-01296R1. This manuscript supports the applicant's AI-methods profile through meta-learning, attentive neural processes, and cross-region generalization for healthy aging assessment.
+- **Egyptian Informatics Journal**: *Spatial fall risk prediction in elderly residential environments using 3D point cloud-derived features and ensemble learning with SHAP interpretability*. Status: R1 revised submission under processing, EGIJ-D-26-00407R1. This manuscript supports the applicant's spatial-intelligence profile through 3D point-cloud features, fall-risk prediction, ensemble learning, and explainable AI.
+
 ## Current Update
 
 The `age-friendly-community-map` source has been modified locally so that the website defaults to English:
@@ -85,4 +90,3 @@ This makes the demo more suitable for international PhD supervisors and XMUM app
 ## Portfolio Statement for Application
 
 I have developed a web-based age-friendly community assessment demo that visualizes multidimensional evaluation results through an interactive map and dashboard. This project demonstrates my ability to translate age-friendly built environment research into computational assessment workflows and user-facing prototypes. For my proposed PhD, I intend to extend this approach toward knowledge-guided vision-language models for indoor space risk assessment and design recommendation.
-
