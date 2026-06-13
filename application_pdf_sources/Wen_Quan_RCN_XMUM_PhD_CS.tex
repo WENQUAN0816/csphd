@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1.9cm]{geometry}
+\usepackage{fontspec}
+\usepackage{enumitem}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\setmainfont{Times New Roman}
+\definecolor{heading}{HTML}{003366}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[itemize]{leftmargin=1.3em,itemsep=2pt,topsep=2pt}
+\titleformat{\section}{\large\bfseries\color{heading}}{}{0pt}{}[\titlerule]
+\begin{document}
+
+{\LARGE \textbf{Research Concept Note}}\\
+\textbf{Applicant:} Wen Quan\\
+\textbf{Target Program:} Doctor of Philosophy in Computer Science and Technology, Xiamen University Malaysia\\
+\textbf{Proposed Field:} Artificial Intelligence / Human-Computer Interaction / Software Technology
+
+\section*{Proposed Title}
+\textbf{A Knowledge-Guided Vision-Language Framework for Age-Friendly Indoor Space Assessment and Design Recommendation}
+
+\section*{Background}
+Population ageing creates increasing demand for safer, more accessible, and more supportive indoor living environments. Many age-friendly design problems are spatial and visual: blocked circulation paths, unsafe bathrooms, insufficient lighting, unsuitable furniture arrangement, lack of handrails, inaccessible entrances, and inadequate caregiving space. Traditional assessment methods depend heavily on manual checklists and expert inspections, which are difficult to scale across homes, residential communities, and care environments.
+
+Recent advances in vision-language models provide new opportunities for AI-assisted environmental assessment. These models can interpret images and textual prompts, but their outputs are often generic and insufficiently grounded in domain-specific design knowledge. Reliable assessment of age-friendly indoor environments requires both visual understanding and structured knowledge of accessibility, fall-risk prevention, caregiving, ergonomic design, and evidence-based renovation strategies.
+
+\section*{Research Gap}
+Existing indoor scene understanding research mainly focuses on object detection, semantic segmentation, navigation, or general 3D scene understanding. Built environment studies provide rich design guidelines and assessment frameworks, but they are often not computationally integrated with AI models. There is therefore a gap between general-purpose visual AI and domain-specific, explainable, age-friendly spatial assessment.
+
+The proposed research addresses this gap by developing a lightweight spatial intelligence framework that combines vision-language models, an age-friendly design knowledge base, rule-guided reasoning, and expert validation.
+
+\section*{Aim}
+To develop and evaluate a knowledge-guided vision-language framework for assessing age-friendly indoor spaces and generating explainable design recommendations.
+
+\section*{Objectives}
+\begin{enumerate}
+  \item To construct a structured age-friendly indoor space knowledge base covering accessibility, fall-risk factors, caregiving space, lighting, furniture layout, bathroom safety, and design intervention principles.
+  \item To develop a vision-language assessment workflow that identifies spatial risks from indoor photographs, simple floor plans, or community environment images.
+  \item To integrate design rules and domain knowledge with VLM outputs to improve reliability, explainability, and practical relevance.
+  \item To build a prototype system that generates risk explanations and design recommendations for age-friendly indoor environments.
+  \item To validate the framework through expert evaluation and a small-scale dataset of real residential/community/care environment cases.
+\end{enumerate}
+
+\section*{Methodology}
+The study will follow a design science and AI-assisted assessment methodology. First, age-friendly indoor environment criteria will be extracted from design guidelines, academic literature, existing assessment frameworks, and the applicant's previous research on age-friendly living environments and community assessment. These criteria will be organized into a structured knowledge base and risk taxonomy.
+
+Second, a lightweight multimodal workflow will be developed using existing AI models, such as vision-language models, object detection, segmentation, and image-depth estimation where appropriate. Third, domain rules will be used to constrain and interpret model outputs. Instead of relying only on open-ended AI responses, the system will classify issues into predefined risk categories and provide evidence-based design recommendations.
+
+Fourth, a prototype will be developed and tested using the applicant's existing age-friendly community map demo as an initial portfolio foundation. Finally, expert validation will evaluate risk identification accuracy, explanation quality, recommendation usefulness, and practical usability.
+
+\section*{Expected Data}
+The study will use a manageable, lightweight dataset rather than a large-scale visual benchmark.
+
+\begin{itemize}
+  \item Minimum feasible version: 20--30 real residential/community/care environment cases, 80--150 room or spatial samples, 300--700 photographs or visual records, and 50--100 expert design recommendations.
+  \item Preferred PhD-scale version: 30--50 real cases, 150--250 rooms or spatial samples, 500--1000 photographs, 150--300 expert recommendations, and partial repeated expert annotation for reliability checking.
+\end{itemize}
+
+\section*{Expected Contributions}
+\begin{itemize}
+  \item A structured age-friendly indoor space knowledge base.
+  \item A knowledge-guided VLM framework for spatial risk assessment.
+  \item An explainable design recommendation workflow for age-friendly renovation.
+  \item A prototype system demonstrating AI-assisted assessment and decision support.
+  \item A bridge between computer science, HCI, AI applications, and age-friendly built environment research.
+\end{itemize}
+
+\section*{Fit with XMUM}
+The project fits the PhD in Computer Science and Technology through its focus on AI, software technology, human-computer interaction, knowledge-based systems, multimodal AI, and applied computer vision. It is particularly suitable for supervision in AI, HCI, software engineering, computer vision, or intelligent healthcare-related research areas.
+
+\end{document}
+

@@ -10,9 +10,25 @@ This checklist tracks files needed for a PhD application to Xiamen University Ma
 - `application_materials/04_AI_CS_Portfolio.md`
 - `application_materials/05_XMUM_Application_File_Checklist.md`
 
+## PhD-Application-Specific PDFs Generated
+
+These PDFs are newly generated for the XMUM PhD in Computer Science and Technology application. They should be used instead of the older lecturer-job CV/resume PDFs when contacting supervisors or submitting the doctoral application.
+
+- `application_materials/pdf/Wen_Quan_PhD_Application_CV_XMUM_CS.pdf`
+- `application_materials/pdf/Wen_Quan_RCN_XMUM_PhD_CS.pdf`
+- `application_materials/pdf/Wen_Quan_Research_Proposal_XMUM_PhD_CS.pdf`
+- `application_materials/pdf/Wen_Quan_AI_CS_Portfolio_XMUM_PhD_CS.pdf`
+
+Editable LaTeX sources:
+
+- `application_pdf_sources/Wen_Quan_PhD_Application_CV_XMUM_CS.tex`
+- `application_pdf_sources/Wen_Quan_RCN_XMUM_PhD_CS.tex`
+- `application_pdf_sources/Wen_Quan_Research_Proposal_XMUM_PhD_CS.tex`
+- `application_pdf_sources/Wen_Quan_AI_CS_Portfolio_XMUM_PhD_CS.tex`
+
 ## Local Supporting Files Found and Copied
 
-The following files were found locally and should be usable as supporting materials after final review:
+The following files were found locally and are retained only as supporting/private reference materials. They are general-purpose or job-application files, not the recommended PhD application PDFs:
 
 - Full CV PDF from local `cv` folder.
 - Short CV PDF from local `cv` folder.
