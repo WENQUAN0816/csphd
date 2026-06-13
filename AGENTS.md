@@ -103,3 +103,18 @@ Commit school-package updates with clear messages such as:
 
 `docs: add Canada PhD school packages`
 
+## Sub-Agent Use
+
+The user has authorized proactive use of explorer and worker sub-agents inside this project when it is helpful.
+
+Use sub-agents for:
+
+- verifying supervisor names, affiliations, emails, funding routes, and recent papers;
+- splitting school packages by country or region;
+- drafting school-specific CV, RCN, RP, portfolio, and outreach email variants;
+- checking consistency across packages;
+- reviewing generated materials for overclaiming, weak fit, or missing verification notes.
+
+Use explorers for read-only research and package inspection. Use workers only when the write scope is disjoint, such as one country, one region, or one school package.
+
+Do not let two workers edit the same school package at the same time. Do not let sub-agents edit `private/` or add sensitive documents. The main agent must review and integrate sub-agent outputs before committing.
