@@ -1,11 +1,14 @@
-﻿# Target Supervisors - University of Washington
+# Target Supervisors - University of Washington
 
-## Shortlist
+## Verified Supervisor Table
 
-- Jennifer Mankoff - accessibility and HCI (verify before sending).
-- Jon Froehlich - accessibility, sensing, and HCI (verify before sending).
-- Shwetak Patel - ubiquitous sensing and health technology (verify before sending).
-- Jeffrey Heer - visualization and human-centered data systems (verify before sending).
+| Name | Current affiliation/role | Verified research fit to Wen Quan's proposed PhD | Official profile URL | Email if official page exposes it | Fit score | Notes |
+|---|---|---|---|---|---|---|
+| Jennifer Mankoff | Professor, Paul G. Allen School of Computer Science and Engineering, University of Washington | Direct fit for accessibility-aware HCI and assistive technology; strong bridge from age-friendly environments to human-AI systems for disability and aging-in-place. | https://www.cs.washington.edu/people/faculty/jmankoff | jmankoff@cs.uw.edu | High | Best current UW contact from the original shortlist. Confirm PhD-advising capacity before sending. |
+| Jon E. Froehlich | Professor, Paul G. Allen School of Computer Science and Engineering, University of Washington | Strong fit for sensing, accessibility, and human-centered systems; useful for lightweight spatial intelligence and built-environment assessment. | https://www.cs.washington.edu/people/faculty/jonf | jonf@cs.washington.edu | High | Good second-choice UW contact, especially if the proposal emphasizes sensing and accessibility. |
+| Shwetak Patel | Professor, Paul G. Allen School of Computer Science and Engineering, University of Washington | Strong fit for ubiquitous sensing and health technology; relevant to in-home assessment, activity monitoring, and aging-in-place decision support. | https://www.cs.washington.edu/people/faculty/shwetak | shwetak@cs.washington.edu | High | Excellent technical fit, but tailor away from pure design evaluation toward sensing and health systems. |
+| Jeffrey Heer | Professor, Paul G. Allen School of Computer Science and Engineering, University of Washington | Fit through visualization, interactive data analysis, and human-centered data systems for explainable decision support. | https://www.cs.washington.edu/people/faculty/jheer | jheer@cs.washington.edu | Medium | Current and verifiable, but less directly tied to aging/accessibility than Mankoff, Froehlich, or Patel. |
+| Jacob O. Wobbrock | Professor, Information School, University of Washington | Strong replacement candidate for accessibility, HCI, and interaction techniques; relevant if the project foregrounds accessible evaluation workflows and expert validation. | https://ischool.uw.edu/people/faculty/profile/wobbrock | wobbrock@uw.edu | High | Added as a stronger accessibility/HCI option if Jeffrey Heer is too visualization-focused for the first email. |
 
 ## Best-Fit Supervisor Type
 

@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Human-Centered Multimodal AI for Age-Friendly Indoor Decision Support
 
-Dear Professor Eduardo Velloso,
+Dear Professor Waycott,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

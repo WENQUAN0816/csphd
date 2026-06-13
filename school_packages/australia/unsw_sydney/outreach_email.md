@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Explainable Computer Vision for Age-Friendly Indoor Safety Assessment
 
-Dear Professor Toby Walsh,
+Dear Professor Salim,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

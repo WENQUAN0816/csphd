@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Computer Vision and Vision-Language Models for Age-Friendly Indoor Environments
 
-Dear Professor Jiaya Jia,
+Dear Professor Chi-Wing Fu,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

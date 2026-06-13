@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Explainable Spatial Reasoning for Age-Friendly Indoor AI
 
-Dear Professor Sethu Vijayakumar,
+Dear Oisin Mac Aodha,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

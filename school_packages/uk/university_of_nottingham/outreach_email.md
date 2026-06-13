@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Mixed-Reality and Human-AI Tools for Age-Friendly Indoor Assessment
 
-Dear Professor Steve Benford,
+Dear Professor Joel Fischer,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

@@ -1,24 +1,17 @@
-﻿# Target Supervisors - Victoria University of Wellington
+# Target Supervisors - Victoria University of Wellington
 
-## Shortlist
+Verified on 2026-06-14 using official Te Herenga Waka / Victoria University of Wellington people, ECS, HCI group, CDSAI, and SpatialThink pages.
 
-- Mengjie Zhang - AI and evolutionary computation (verify before sending).
-- Bing Xue - machine learning and feature selection (verify before sending).
-- Ian Welch - software engineering and security-related computing (verify before sending).
+| Name | Current affiliation/role | Verified research fit to Wen Quan's proposed PhD | Official profile URL | Email if official page exposes it | Fit score | Notes |
+|---|---|---|---|---|---|---|
+| Andrew Lensen | Senior Lecturer in AI; Programme Director, Artificial Intelligence; School of Engineering and Computer Science / Centre for Data Science and AI | Strong fit for explainable/interdisciplinary AI, AI for good, social/ethical AI, and health-equity AI grants; maps directly to explainable assessment and expert validation. | https://people.wgtn.ac.nz/andrew.lensen | andrew.lensen@vuw.ac.nz; Andrew.Lensen@ecs.vuw.ac.nz | High | Best first-contact lead for the current "Explainable AI and Software Prototyping" package. |
+| Bing Xue | Professor of AI; Deputy Head of School Research & International; School of Engineering and Computer Science | Strong AI/ML, feature selection, data visualization, and real-world application fit; useful for interpretable feature construction and assessment models. | https://people.wgtn.ac.nz/bing.xue | bing.xue@vuw.ac.nz | Medium-High | Strong original candidate, especially as AI-methods co-supervisor; weaker on HCI/spatial than Lensen/Anslow. |
+| Mengjie Zhang | Professor; Director, Centre for Data Science and Artificial Intelligence | Strong evolutionary computation/AI leadership fit and CDSAI access; useful for method development in explainable/evolutionary ML. | https://people.wgtn.ac.nz/mengjie.zhang | mengjie.zhang@vuw.ac.nz | Medium | Viable but less directly tied to HCI, spatial interfaces, or aging environments than replacement candidates. |
+| Craig Anslow | Senior Lecturer, School of Engineering and Computer Science; VUW HCI group | Good fit for HCI, software visualization, visual analytics, VR/software prototyping, and human aspects of software engineering. | https://ecs.wgtn.ac.nz/Groups/HCI/People | craig.anslow@vuw.ac.nz | Medium-High | Strong replacement for the weak software/security line; best as HCI/software prototype co-supervisor. |
+| Simon McCallum | Senior Lecturer, School of Engineering and Computer Science; VUW HCI group | Good fit for HCI, AI, serious games, VR, and health-related VR/game interventions. | https://people.wgtn.ac.nz/simon.mccallum | simon.mccallum@vuw.ac.nz | Medium-High | Useful replacement if the proposal foregrounds interactive health/VR prototypes and user studies. |
+| Mairéad de Róiste | Deputy Head of School, Geography, Environment and Earth Sciences; SpatialThink Lab lead | Strong co-supervisor fit for GIS, geovisualization, spatial thinking/cognition, VR, public participation GIS, and decision-support systems. | https://people.wgtn.ac.nz/mairead.deroiste | mairead.deroiste@vuw.ac.nz | Medium | Strong spatial co-supervisor, but outside CS; use as a secondary/collaborative target rather than primary CS supervisor. |
+| Ian Welch | Associate Professor; Programme Director Cyber Security; School of Engineering and Computer Science | Software/security fit only; weak alignment to AI/HCI/spatial intelligence/age-friendly indoor assessment unless the project becomes privacy/security for assessment systems. | https://people.wgtn.ac.nz/ian.welch | ian.welch@vuw.ac.nz | Low | Mark as weak for this PhD theme; replace with Lensen, Anslow, or McCallum for outreach. |
 
-## Best-Fit Supervisor Type
+## Recommended Outreach Lead
 
-Prioritize supervisors working in at least one of these areas:
-
-- Human-AI interaction, HCI, accessibility, or assistive technology.
-- Computer vision, 3D scene understanding, point clouds, spatial computing, or vision-language models.
-- AI for health, aging, smart homes, or decision-support systems.
-- Explainable AI, knowledge-guided AI, or human-centered AI.
-
-## Verification Checklist
-
-- Confirm current affiliation and email from the official university page.
-- Confirm whether the supervisor is accepting PhD students.
-- Confirm whether the supervisor can fund an international PhD student.
-- Read 2-3 recent papers before sending the email.
-- Replace all bracketed text in outreach_email.md.
+Use Dr Andrew Lensen as first contact for the explainable-AI framing, with Craig Anslow or Simon McCallum as HCI/software-prototyping co-supervisor candidates.

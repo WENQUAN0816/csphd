@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Health-Facing HCI and AI for Age-Friendly Indoor Environments
 
-Dear Professor Stacy Branham,
+Dear Professor Stephen Intille,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

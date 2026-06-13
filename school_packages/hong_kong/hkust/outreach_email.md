@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Knowledge-Guided VLM and 3D Spatial Reasoning for Age-Friendly Indoor Assessment
 
-Dear Professor Long Quan,
+Dear Professor Xiaojuan Ma,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

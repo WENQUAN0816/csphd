@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Human-Centered AI for Healthy Aging Indoor Environment Assessment
 
-Dear Professor Health informatics and HCI supervisors,
+Dear Professor Regenbrecht,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

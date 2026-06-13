@@ -1,24 +1,20 @@
-﻿# Target Supervisors - Linkoping University
+# Target Supervisors - Linkoping University
 
-## Shortlist
+Verified on 2026-06-14 using official Linkoping University employee pages.
 
-- Michael Felsberg - computer vision (verify before sending).
-- Fredrik Heintz - AI and autonomous systems (verify before sending).
-- Anders Ynnerman - visualization and scientific computing (verify before sending).
+| Name | Current affiliation / role | Verified research fit to Wen Quan's proposed PhD | Official profile URL | Email if official page exposes it | Fit score | Notes |
+|---|---|---|---|---|---|---|
+| Michael Felsberg | Professor and Head of Division, Computer Vision and Learning Systems, Department of Electrical Engineering | Strong computer-vision and AI fit. Official profile lists 3D computer vision, computational imaging, object detection/tracking/recognition, robot vision, and autonomous systems. | https://liu.se/en/employee/micfe03 | michael.felsberg@liu.se | High | Existing candidate verified. Strongest for CV/spatial AI methods, less directly HCI/age-friendly. |
+| Fredrik Heintz | Professor, Head of Division and Head of Unit, Artificial Intelligence and Integrated Systems, Department of Computer and Information Science | Strong AI-methods fit: trustworthy AI, autonomous systems, stream reasoning, and knowledge representation plus machine learning. | https://liu.se/en/employee/frehe08 | fredrik.heintz@liu.se | Medium | Existing candidate verified. Good for knowledge-guided AI; weaker for computer vision and indoor spatial assessment. |
+| Anders Ynnerman | Professor and Head of Division, Media and Information Technology | Strong visual analytics/visualization fit. Official profile covers scientific visualization, applied visualization, medical visualization, autonomous systems, AI, and visual learning/communication. | https://liu.se/en/employee/andyn27 | anders.ynnerman@liu.se | High | Existing candidate verified. Strong for explainable visual analytics and decision-support presentation. |
+| Mario Romero | Senior Associate Professor and Head of Unit, Immersive Visualization, Media and Information Technology | Strong replacement for visual analytics + HCI. Official profile states a focus on supporting human understanding of complex data through immersive visualizations enhanced with AI. | https://liu.se/en/employee/marro71 | mario.romero@liu.se | High | Added as a stronger Linkoping-specific version of the old KTH/Mario lead. Good first contact if the proposal is framed around immersive visual analytics and human-AI decision support. |
 
-## Best-Fit Supervisor Type
+## Outreach Priority
 
-Prioritize supervisors working in at least one of these areas:
+There is no single universally best first contact. Use **Michael Felsberg** for a computer-vision/spatial-AI methods email; use **Mario Romero** or **Anders Ynnerman** for a visual-analytics and human-understanding email.
 
-- Human-AI interaction, HCI, accessibility, or assistive technology.
-- Computer vision, 3D scene understanding, point clouds, spatial computing, or vision-language models.
-- AI for health, aging, smart homes, or decision-support systems.
-- Explainable AI, knowledge-guided AI, or human-centered AI.
+## Verification Checklist Before Sending
 
-## Verification Checklist
-
-- Confirm current affiliation and email from the official university page.
-- Confirm whether the supervisor is accepting PhD students.
-- Confirm whether the supervisor can fund an international PhD student.
-- Read 2-3 recent papers before sending the email.
-- Replace all bracketed text in outreach_email.md.
+- Confirm whether the target supervisor is accepting PhD students and whether funding is tied to posted vacancies.
+- Choose one framing before sending: CV/spatial AI, trustworthy AI, or immersive visual analytics.
+- Add one specific recent paper or project to `outreach_email.md`.

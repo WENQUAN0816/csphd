@@ -1,11 +1,15 @@
-﻿# Target Supervisors - Carnegie Mellon University
+# Target Supervisors - Carnegie Mellon University
 
-## Shortlist
+## Verified Supervisor Table
 
-- Jodi Forlizzi - HCI and design research (verify before sending).
-- Chris Harrison - HCI and interactive systems (verify before sending).
-- Deva Ramanan - computer vision (verify before sending).
-- Martial Hebert - robotics and perception (verify before sending).
+| Name | Current affiliation/role | Verified research fit to Wen Quan's proposed PhD | Official profile URL | Email if official page exposes it | Fit score | Notes |
+|---|---|---|---|---|---|---|
+| Jodi Forlizzi | Professor, Human-Computer Interaction Institute, Carnegie Mellon University | Good fit for HCI, design research, and human-centered technology evaluation; useful for translating age-friendly built-environment expertise into CS/HCI research. | https://www.hcii.cmu.edu/people/jodi-forlizzi | forlizzi@cs.cmu.edu | Medium | Current and verifiable, but the fit is more HCI/design than AI or spatial intelligence. |
+| Chris Harrison | Associate Professor, Human-Computer Interaction Institute, Carnegie Mellon University | Medium fit for interactive systems and novel sensing/input; relevant if the project becomes a deployed indoor assessment tool. | https://www.hcii.cmu.edu/people/chris-harrison | chris.harrison@cs.cmu.edu | Medium | Current and verifiable; less directly tied to aging, accessibility, or explainable AI. |
+| Deva Ramanan | Professor, Robotics Institute, Carnegie Mellon University | Strong fit for computer vision, 3D/4D perception, vision-language models, and multimodal foundation models for scene understanding. | https://www.cs.cmu.edu/~deva/ | deva@cs.cmu.edu | High | Strong technical fit for the vision-language/spatial-intelligence side; tailor the email to indoor scene assessment and human-AI oversight. |
+| Martial Hebert | University Professor, Robotics Institute, Carnegie Mellon University | Medium fit for robotics, perception, and scene understanding; relevant to spatial intelligence but less direct for aging/accessibility. | https://www.ri.cmu.edu/ri-faculty/martial-hebert/ | Not exposed on official page | Medium | Current and verifiable, but not the strongest first outreach target for Wen Quan's human-centered proposal. |
+| Jeffrey P. Bigham | Professor, Human-Computer Interaction Institute, Carnegie Mellon University | Strong replacement candidate for accessibility, AI, and human-centered computing; directly matches accessibility-aware human-AI systems. | https://www.hcii.cmu.edu/people/jeffrey-bigham | jbigham@cs.cmu.edu | High | Best CMU first-contact option if the proposal emphasizes accessibility-aware AI and human-centered evaluation. |
+| Mayank Goel | Associate Professor, Human-Computer Interaction Institute, Carnegie Mellon University | Strong replacement candidate for health sensing, ubiquitous computing, and HCI; relevant to aging-in-place and in-home decision support. | https://www.hcii.cmu.edu/people/mayank-goel | mayankgoel@cmu.edu | High | Stronger than several original HCI-only entries if the pitch emphasizes health-facing sensing and indoor assessment. |
 
 ## Best-Fit Supervisor Type
 

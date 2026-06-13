@@ -1,24 +1,15 @@
-﻿# Target Supervisors - University of Waikato
+# Target Supervisors - University of Waikato
 
-## Shortlist
+Verified on 2026-06-14 using official University of Waikato profile, AI Institute, and Machine Learning Group pages.
 
-- Eibe Frank - machine learning and data mining (verify before sending).
-- Albert Bifet - machine learning and data streams (verify before sending).
-- Bernhard Pfahringer - machine learning (verify before sending).
+| Name | Current affiliation/role | Verified research fit to Wen Quan's proposed PhD | Official profile URL | Email if official page exposes it | Fit score | Notes |
+|---|---|---|---|---|---|---|
+| Eibe Frank | Professor, Department of Computer Science; Assistant Dean TNE (Hainan) | Strong lightweight ML/data mining fit; WEKA background and official availability for Masters/PhD supervision support an applied, interpretable indoor risk-assessment proposal. | https://profiles.waikato.ac.nz/eibe.frank | eibe.frank@waikato.ac.nz | Medium-High | Best fit among the original shortlist for a lightweight ML pitch. Less direct HCI/spatial fit, so frame around interpretable models and assessment validity. |
+| Albert Bifet | Professor of AI; Director, Te Ipu o te Mahara / AI Institute | Strong fit for adaptive AI, machine learning for data streams, stream/sensor data, responsible AI, and real-time monitoring. | https://profiles.waikato.ac.nz/albert.bifet | albert.bifet@waikato.ac.nz | Medium-High | Strong AI Institute lead if the project is framed as adaptive assessment from streams/sensors rather than VLM-heavy spatial computing. |
+| Bernhard Pfahringer | Professor, Department of Computer Science; Co-Director, AI Institute | Strong ML/data-mining and data-streams fit; official page lists Masters/PhD supervision availability. | https://profiles.waikato.ac.nz/bernhard.pfahringer | bernhard.pfahringer@waikato.ac.nz | Medium | Good ML co-supervisor candidate; weaker on HCI/aging/spatial evaluation unless paired with an HCI or health collaborator. |
+| Mark Apperley | Professor, School of Computing and Mathematical Sciences; Research Associate, Te Puna Haumaru | Stronger HCI/information visualization replacement candidate; long-running HCI and visualization work can support an expert-facing assessment dashboard/interface. | https://profiles.waikato.ac.nz/mark.apperley | mark.apperley@waikato.ac.nz | Medium-High | Add as a replacement because the original Waikato shortlist was ML-heavy and under-covered HCI/visualization. Confirm current PhD-supervision capacity before outreach. |
+| Jessica Turner | Senior Lecturer, Department of Software Engineering; Programme Lead, Software Engineering | Good HCI, cyber-physical systems/IoT, social robotics, medical devices, and PhD supervision availability fit for age-friendly indoor assessment as an interactive/IoT-enabled system. | https://profiles.waikato.ac.nz/jessica.turner | jessica.turner@waikato.ac.nz | Medium-High | Stronger applied HCI/medical-device replacement candidate; likely best as co-supervisor with an AI Institute ML lead. |
 
-## Best-Fit Supervisor Type
+## Recommended Outreach Lead
 
-Prioritize supervisors working in at least one of these areas:
-
-- Human-AI interaction, HCI, accessibility, or assistive technology.
-- Computer vision, 3D scene understanding, point clouds, spatial computing, or vision-language models.
-- AI for health, aging, smart homes, or decision-support systems.
-- Explainable AI, knowledge-guided AI, or human-centered AI.
-
-## Verification Checklist
-
-- Confirm current affiliation and email from the official university page.
-- Confirm whether the supervisor is accepting PhD students.
-- Confirm whether the supervisor can fund an international PhD student.
-- Read 2-3 recent papers before sending the email.
-- Replace all bracketed text in outreach_email.md.
+Professor Eibe Frank remains a defensible first-contact lead for the current "Lightweight Machine Learning" framing. If the proposal is revised toward HCI/IoT interaction, consider Jessica Turner with an AI Institute co-supervisor.

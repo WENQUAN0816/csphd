@@ -1,24 +1,17 @@
-﻿# Target Supervisors - University of Otago
+# Target Supervisors - University of Otago
 
-## Shortlist
+Verified on 2026-06-14 using official University of Otago School of Computing, HCI research-theme, media-expertise, and staff pages where available.
 
-- Health informatics and HCI supervisors - verify before sending.
-- Computer vision or applied AI supervisors - verify before sending.
-- Aging and digital health collaborators - verify before sending.
+| Name | Current affiliation/role | Verified research fit to Wen Quan's proposed PhD | Official profile URL | Email if official page exposes it | Fit score | Notes |
+|---|---|---|---|---|---|---|
+| Holger Regenbrecht | Professor and Head of Department, Information Science / School of Computing; HCI Lab lead | Strong HCI, virtual/augmented reality, presence, computer-mediated communication, virtual rehabilitation, and therapy/rehabilitation fit for human-centered aging indoor assessment. | https://www.otago.ac.nz/school-of-computing/our-people/holger-regenbrecht | holger.regenbrecht@otago.ac.nz | High | Best first-contact lead. Official page explicitly invites prospective PhD-supervision enquiries by CV and brief proposal. |
+| Steven Mills | Professor, School of Computing / Computer Science | Strong computer vision and 3D scene reconstruction fit, including reconstructing scenes from multiple views and architectural model generation. | https://www.otago.ac.nz/school-of-computing/our-people/steven_mills | steven.mills@otago.ac.nz | High | Strong spatial-intelligence lead or co-supervisor; pair with Regenbrecht for HCI/age-friendly validation. |
+| Sherlock Licorish | School of Computing academic | Good applied AI/software engineering fit; official page lists a 2025 abstract on AI-assisted injury risk prediction for older New Zealanders using co-design. | https://www.otago.ac.nz/school-of-computing/our-people/sherlock-licorish | sherlock.licorish@otago.ac.nz | Medium-High | Strong aging/AI replacement candidate, but less direct on indoor spatial intelligence; consider as co-supervisor for older-adult risk modelling and co-design. |
+| Veronica Liesaputra | Senior Lecturer, Department of Computer Science | Moderate fit through Computer Science, information retrieval/search, and AI-related PhD supervision topics; weaker direct evidence for HCI/spatial aging assessment. | https://www.otago.ac.nz/school-of-computing/our-people/veronica-liesaputra | veronica.liesaputra@otago.ac.nz | Medium | Viable secondary candidate if the proposal needs CS/AI supervision, but not the strongest first contact. |
+| Jeremiah Deng | Professor, School of Computing | Moderate methods fit through machine learning and computer vision; useful for image/vision methods but less direct HCI/aging fit. | https://www.otago.ac.nz/school-of-computing/our-people/jeremiah-deng | jeremiah.deng@otago.ac.nz | Medium | Consider only as methods co-supervisor if the project emphasizes vision model development. |
+| Tobias Langlotz | Former University of Otago professor; now listed by Aarhus University as having joined Aarhus after Otago | Historically strong AR/HCI fit, but no longer a current Otago target based on official/current web evidence. | https://cs.au.dk/news-events/meet-our-new-faculty-member-tobias-langlotz | Not applicable for Otago outreach | Low | Do not target for University of Otago. Outdated for this school package. |
+| Anthony Robins | Emeritus Professor, School of Computing | Historical AI/HCI/computing-education relevance, but official Otago page says he retired from the School of Computing in April 2025. | https://www.otago.ac.nz/school-of-computing/our-people/anthony_robins | anthony.robins@otago.ac.nz | Low | Mark as weak/outdated for primary PhD supervision. |
 
-## Best-Fit Supervisor Type
+## Recommended Outreach Lead
 
-Prioritize supervisors working in at least one of these areas:
-
-- Human-AI interaction, HCI, accessibility, or assistive technology.
-- Computer vision, 3D scene understanding, point clouds, spatial computing, or vision-language models.
-- AI for health, aging, smart homes, or decision-support systems.
-- Explainable AI, knowledge-guided AI, or human-centered AI.
-
-## Verification Checklist
-
-- Confirm current affiliation and email from the official university page.
-- Confirm whether the supervisor is accepting PhD students.
-- Confirm whether the supervisor can fund an international PhD student.
-- Read 2-3 recent papers before sending the email.
-- Replace all bracketed text in outreach_email.md.
+Use Professor Holger Regenbrecht as the first-contact lead, with Professor Steven Mills as the strongest spatial/computer-vision co-supervisor target.

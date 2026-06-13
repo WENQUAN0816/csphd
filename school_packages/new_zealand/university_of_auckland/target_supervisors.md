@@ -1,25 +1,16 @@
-﻿# Target Supervisors - University of Auckland
+# Target Supervisors - University of Auckland
 
-## Shortlist
+Verified on 2026-06-14 using official University of Auckland profile and HCI group pages where available.
 
-- Beryl Plimmer - HCI and interaction design (verify before sending).
-- Burkhard Wuensche - computer graphics and visualization (verify before sending).
-- Yun Sing Koh - AI and machine learning (verify before sending).
-- Mark Billinghurst - AR/HCI connection to verify before sending.
+| Name | Current affiliation/role | Verified research fit to Wen Quan's proposed PhD | Official profile URL | Email if official page exposes it | Fit score | Notes |
+|---|---|---|---|---|---|---|
+| Mark Billinghurst | Professor, Auckland Bioengineering Institute / Bioengineering; listed in the University of Auckland HCI group | Strong AR/VR/XR, HCI, empathic computing, and 3D/remote collaboration fit for an AR/HCI-ready indoor spatial assessment system. | https://profiles.auckland.ac.nz/mark-billinghurst | mark.billinghurst@auckland.ac.nz | High | Best lead to approach for the spatial-HCI/XR framing; consider a CS co-supervisor if the PhD must sit strictly in Computer Science. |
+| Suranga Nanayakkara | Associate Professor, Bioengineering; University of Auckland HCI group | Strong fit for assistive augmentation, intelligent HCI, design thinking, and human-centered machine learning for age-friendly assessment tools. | https://hci.auckland.ac.nz/people/ | s.nanayakkara@auckland.ac.nz | High | Strong replacement for older HCI names; especially good if the proposal foregrounds assistive technology and human-centered ML. |
+| Alex Shaw | Lecturer, Computer Science; University of Auckland HCI group | Good fit for virtual/augmented reality, health, and education; useful for indoor assessment prototypes and expert-facing spatial interfaces. | https://hci.auckland.ac.nz/people/ | l.shaw@auckland.ac.nz | High | Stronger current Computer Science replacement candidate; likely better as co-lead/co-supervisor with Billinghurst or Nanayakkara. |
+| Burkhard Wuensche | Associate Professor, Computer Science | Strong visual computing, computer graphics, scientific/biomedical visualization, image-based modelling, and game technology fit for 3D indoor scene reconstruction/visual assessment. | https://profiles.auckland.ac.nz/bwue001 | bwue001@aucklanduni.ac.nz; burkhard@cs.auckland.ac.nz | Medium-High | Good methods fit for spatial intelligence, visualization, and 3D modelling; weaker on aging/HCI evaluation than the HCI group leads. |
+| Yun Sing Koh | Professor, School of Computer Science; AI / machine learning | Good AI methods fit through machine learning, data streams, continual/adaptive learning, transfer learning, anomaly detection, and ML for social good. | https://profiles.auckland.ac.nz/y-koh | Not exposed on official profile page reviewed | Medium | Strong AI lead but less direct HCI/spatial/age-friendly fit; useful if the proposal emphasizes lightweight adaptive ML and evaluation metrics. |
+| Beryl Plimmer | Honorary Academic, Computer Science; listed under Alumni on the HCI group page | Historical HCI and pen/gesture interaction fit, but current role appears honorary rather than a normal primary-supervisor role. | https://hci.auckland.ac.nz/people/ | b.plimmer@auckland.ac.nz | Low | Mark as weak/outdated for primary outreach. Do not use as first contact unless confirming she can still supervise or co-supervise PhD students. |
 
-## Best-Fit Supervisor Type
+## Recommended Outreach Lead
 
-Prioritize supervisors working in at least one of these areas:
-
-- Human-AI interaction, HCI, accessibility, or assistive technology.
-- Computer vision, 3D scene understanding, point clouds, spatial computing, or vision-language models.
-- AI for health, aging, smart homes, or decision-support systems.
-- Explainable AI, knowledge-guided AI, or human-centered AI.
-
-## Verification Checklist
-
-- Confirm current affiliation and email from the official university page.
-- Confirm whether the supervisor is accepting PhD students.
-- Confirm whether the supervisor can fund an international PhD student.
-- Read 2-3 recent papers before sending the email.
-- Replace all bracketed text in outreach_email.md.
+Use Professor Mark Billinghurst as the first-contact lead for this package, with Suranga Nanayakkara or Alex Shaw as stronger current alternatives if the project is reframed toward assistive human-centered ML or Computer Science-based XR/HCI.

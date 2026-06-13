@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Human-Centered Vision-Language Systems for Age-Friendly Indoor Assessment
 
-Dear Professor Jodi Forlizzi,
+Dear Professor Jeffrey Bigham,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

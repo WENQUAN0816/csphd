@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: 3D Vision and Spatial Intelligence for Age-Friendly Indoor Assessment
 
-Dear Professor Daniel Cremers,
+Dear Professor Angela Dai,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Design-Science AI for Age-Friendly Indoor Spatial Assessment
 
-Dear Professor Computer vision and AI faculty,
+Dear Professor Åström,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

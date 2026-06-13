@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Interactive Spatial AI for Age-Friendly Indoor Assessment
 
-Dear Professor Christoph Bartneck,
+Dear Associate Professor Hoermann,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

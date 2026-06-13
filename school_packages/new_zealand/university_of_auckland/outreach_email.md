@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Vision-Language and HCI Frameworks for Age-Friendly Indoor Spatial Assessment
 
-Dear Professor Beryl Plimmer,
+Dear Professor Billinghurst,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

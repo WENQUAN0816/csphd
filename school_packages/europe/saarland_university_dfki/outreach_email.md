@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Knowledge-Guided AI for Interactive Indoor Spatial Assessment
 
-Dear Professor Antonio Kruger,
+Dear Jan Alexandersson,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 

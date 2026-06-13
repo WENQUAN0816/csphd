@@ -2,7 +2,7 @@
 
 Subject: Prospective PhD applicant: Applied AI and Image-Based Spatial Risk Assessment for Age-Friendly Homes
 
-Dear Professor Hong Yan,
+Dear Professor Junhui Hou,
 
 My name is Wen Quan. I have completed a PhD in Interior Design at Universiti Sains Malaysia, with a research focus on age-friendly built environments, AI-assisted assessment, and spatial evaluation.
 
