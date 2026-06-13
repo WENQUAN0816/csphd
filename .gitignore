@@ -10,3 +10,5 @@ Thumbs.db
 private/
 *.tmp
 
+# Sensitive application documents
+application_documents/
