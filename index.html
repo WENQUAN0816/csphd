@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wen Quan PhD Application Tracker</title>
+  <title>Wen Quan 博士申请进度追踪</title>
   <style>
     :root {
       --bg: #f6f7f9;
@@ -577,53 +577,53 @@
     <header class="topbar">
       <div class="topbar-inner">
         <div class="title-wrap">
-          <h1>Wen Quan PhD Application Tracker</h1>
-          <p class="subtitle" id="positioning">Loading application data...</p>
+          <h1 id="pageTitle">Wen Quan 博士申请进度追踪</h1>
+          <p class="subtitle" id="positioning">正在加载申请数据...</p>
         </div>
         <div class="updated">
-          <span>Dataset updated</span>
+          <span id="updatedLabel">数据更新时间</span>
           <strong id="updatedAt">-</strong>
         </div>
       </div>
     </header>
 
     <section class="toolbar-band">
-      <div class="toolbar" aria-label="Application filters">
+      <div class="toolbar" aria-label="申请筛选">
         <div class="field">
-          <label for="search">Search</label>
-          <input id="search" type="search" placeholder="School, supervisor, direction, track">
+          <label for="search">搜索</label>
+          <input id="search" type="search" placeholder="学校、导师、方向、申请路线">
         </div>
         <div class="field">
-          <label for="regionFilter">Region</label>
+          <label for="regionFilter">地区</label>
           <select id="regionFilter"></select>
         </div>
         <div class="field">
-          <label for="priorityFilter">Priority</label>
+          <label for="priorityFilter">优先级</label>
           <select id="priorityFilter"></select>
         </div>
         <div class="field">
-          <label for="stageFilter">Stage</label>
+          <label for="stageFilter">阶段</label>
           <select id="stageFilter"></select>
         </div>
         <div class="field">
-          <label for="trackFilter">Track</label>
+          <label for="trackFilter">路线</label>
           <select id="trackFilter"></select>
         </div>
         <div class="field">
-          <label for="resultFilter">Result</label>
+          <label for="resultFilter">结果</label>
           <select id="resultFilter"></select>
         </div>
-        <button class="reset-button" id="resetFilters" type="button">Reset</button>
+        <button class="reset-button" id="resetFilters" type="button">重置</button>
       </div>
     </section>
 
     <main>
-      <section class="summary-grid" id="summaryGrid" aria-label="Application summary"></section>
+      <section class="summary-grid" id="summaryGrid" aria-label="申请概览"></section>
 
-      <section class="panel-grid" aria-label="Application charts">
+      <section class="panel-grid" aria-label="申请图表">
         <article class="panel">
           <div class="panel-head">
-            <h2 class="panel-title">Stage Funnel</h2>
+            <h2 class="panel-title">申请阶段漏斗</h2>
           </div>
           <div class="panel-body">
             <div class="bar-list" id="stageBars"></div>
@@ -631,7 +631,7 @@
         </article>
         <article class="panel">
           <div class="panel-head">
-            <h2 class="panel-title">Region Distribution</h2>
+            <h2 class="panel-title">地区分布</h2>
           </div>
           <div class="panel-body">
             <div class="bar-list" id="regionBars"></div>
@@ -639,30 +639,30 @@
         </article>
       </section>
 
-      <section class="panel table-panel" aria-label="Application table">
+      <section class="panel table-panel" aria-label="申请列表">
         <div class="panel-head">
-          <h2 class="panel-title">Application Entries</h2>
-          <span class="table-tools" id="tableCount">0 entries</span>
+          <h2 class="panel-title">申请条目</h2>
+          <span class="table-tools" id="tableCount">0 条记录</span>
         </div>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th data-sort="school">School</th>
-                <th data-sort="region">Region</th>
-                <th data-sort="priority_rank">Priority</th>
-                <th data-sort="current_stage">Stage</th>
-                <th data-sort="result">Result</th>
-                <th data-sort="first_outreach_date">First Outreach</th>
-                <th data-sort="research_direction">Direction</th>
-                <th data-sort="track">Track</th>
-                <th data-sort="primary_supervisor">Supervisor</th>
-                <th data-sort="next_action">Next Action</th>
+                <th data-sort="school" data-header="school">学校</th>
+                <th data-sort="region" data-header="region">地区</th>
+                <th data-sort="priority_rank" data-header="priority">优先级</th>
+                <th data-sort="current_stage" data-header="stage">阶段</th>
+                <th data-sort="result" data-header="result">结果</th>
+                <th data-sort="first_outreach_date" data-header="firstOutreach">首次套磁</th>
+                <th data-sort="research_direction" data-header="direction">研究方向</th>
+                <th data-sort="track" data-header="track">路线</th>
+                <th data-sort="primary_supervisor" data-header="supervisor">导师</th>
+                <th data-sort="next_action" data-header="nextAction">下一步</th>
               </tr>
             </thead>
             <tbody id="appTableBody"></tbody>
           </table>
-          <div class="empty" id="emptyState" hidden>No matching applications</div>
+          <div class="empty" id="emptyState" hidden>没有匹配的申请记录</div>
         </div>
       </section>
     </main>
@@ -676,7 +676,7 @@
           <h2 class="drawer-title" id="drawerTitle"></h2>
           <div class="pill-row" id="drawerPills"></div>
         </div>
-        <button class="close-button" id="closeDrawer" type="button" aria-label="Close">x</button>
+        <button class="close-button" id="closeDrawer" type="button" aria-label="关闭">x</button>
       </div>
       <div class="drawer-body" id="drawerBody"></div>
     </div>
@@ -686,12 +686,16 @@
     const state = {
       rows: [],
       filtered: [],
+      metadata: null,
       sortKey: "priority_rank",
-      sortDir: "asc"
+      sortDir: "asc",
+      drawerRowId: null
     };
 
     const els = {
+      pageTitle: document.getElementById("pageTitle"),
       positioning: document.getElementById("positioning"),
+      updatedLabel: document.getElementById("updatedLabel"),
       updatedAt: document.getElementById("updatedAt"),
       summaryGrid: document.getElementById("summaryGrid"),
       stageBars: document.getElementById("stageBars"),
@@ -715,19 +719,215 @@
     };
 
     const regionLabels = {
-      australia: "Australia",
-      canada: "Canada",
-      europe: "Europe",
-      hong_kong: "Hong Kong",
-      new_zealand: "New Zealand",
-      uk: "United Kingdom",
-      usa: "United States"
+      australia: "澳大利亚",
+      canada: "加拿大",
+      europe: "欧洲",
+      hong_kong: "香港",
+      malaysia: "马来西亚",
+      new_zealand: "新西兰",
+      uk: "英国",
+      usa: "美国"
+    };
+
+    const ui = {
+      title: "Wen Quan 博士申请进度追踪",
+      loading: "正在加载申请数据...",
+      loadError: "无法加载 phd_applications.json",
+      datasetUpdated: "数据更新时间",
+      searchPlaceholder: "学校、导师、方向、申请路线",
+      resetButton: "重置",
+      emptyState: "没有匹配的申请记录",
+      close: "关闭",
+      entries: "条记录",
+      positioning: "知识引导的视觉语言模型与轻量化空间智能，用于适老化室内空间评估和设计建议。",
+      all: {
+        regions: "全部地区",
+        priorities: "全部优先级",
+        stages: "全部阶段",
+        tracks: "全部路线",
+        results: "全部结果"
+      },
+      tableHeaders: {
+        school: "学校",
+        region: "地区",
+        priority: "优先级",
+        stage: "阶段",
+        result: "结果",
+        firstOutreach: "首次套磁",
+        direction: "研究方向",
+        track: "路线",
+        supervisor: "导师",
+        nextAction: "下一步"
+      },
+      metrics: [
+        ["追踪院校", "当前筛选范围"],
+        ["已首次套磁", "导师优先联系"],
+        ["等待回复", "需要继续跟进"],
+        ["正式申请", "已提交材料包"],
+        ["S 级优先", "最高优先级路线"],
+        ["需要核查联系", "套磁前暂停确认"]
+      ],
+      details: {
+        programTarget: "目标项目",
+        researchDirection: "研究方向",
+        directionCluster: "方向类别",
+        track: "申请路线",
+        primarySupervisor: "目标导师",
+        firstOutreach: "首次套磁",
+        formalApplication: "正式申请",
+        fundingStatus: "奖学金状态",
+        interview: "面试",
+        offer: "录取",
+        fundingRoute: "资金路线",
+        immigrationRoute: "移民路线",
+        materials: "材料状态",
+        result: "结果",
+        nextAction: "下一步",
+        publicNotes: "公开备注",
+        package: "材料包",
+        updated: "更新日期"
+      }
+    };
+
+    const valueLabels = {
+        "Sent": "已发送",
+        "Not sent": "未发送",
+        "Not submitted": "未提交",
+        "Not confirmed": "未确认",
+        "Not started": "未开始",
+        "No offer yet": "暂无录取",
+        "Draft tailored materials ready": "定制材料草稿已准备",
+        "First outreach sent": "已发送首次套磁",
+        "Needs verified contact before outreach": "套磁前需核查导师联系方式",
+        "Awaiting response": "等待回复",
+        "Fully funded PhD track": "全奖博士路线",
+        "Funded PhD + immigration track": "有资助博士 + 移民路线",
+        "HKPFS / university studentship track": "HKPFS / 学校奖学金路线",
+        "Low-tuition PhD + scholarship track": "低学费博士 + 奖学金路线",
+        "Malaysia supervisor-first PhD track": "马来西亚导师优先博士路线",
+        "Paid doctoral position / funded project track": "带薪博士岗位 / 资助项目路线",
+        "RTP / scholarship track": "RTP / 奖学金路线",
+        "Studentship / scholarship track": "助学金 / 奖学金路线",
+        "Health and aging-in-place AI": "健康与居家养老 AI",
+        "Human-centered AI and accessibility": "以人为中心的 AI 与无障碍",
+        "Spatial AI for age-friendly environments": "适老化环境空间 AI",
+        "Vision and spatial intelligence": "视觉与空间智能",
+        "Monitor reply; if positive, send CV, RCN, RP, and confirm funding route.": "监控导师回复；如果积极，再发送 CV、RCN、RP，并确认资金路线。",
+        "Verify a current supervisor email and send a tailored first outreach email.": "先核查导师当前邮箱，再发送定制化首次套磁邮件。",
+        "Initial supervisor outreach has been sent. Waiting for reply before formal application.": "已发送首次导师套磁；正式申请前等待回复。",
+        "Contact was not sent because a safe current email needs verification.": "尚未发送套磁，因为需要先核查安全且有效的当前邮箱。",
+        "verify supervisor fit, funding deadline, and official immigration pathway before sending.": "发送前核查导师匹配度、奖学金截止日期和官方移民路径。",
+        "verified first-contact target; send first outreach after final email confirmation.": "已核查首次联系目标；最终确认后发送首次套磁邮件。",
+        "Paused because a safe public supervisor contact still needs verification.": "已暂停，因为仍需核查安全公开的导师联系方式。"
     };
 
     const barColors = ["#2563eb", "#14835b", "#b7791f", "#087ea4", "#6d4aff", "#b42318", "#4b5563"];
 
     function text(value) {
       return value === undefined || value === null || value === "" ? "-" : String(value);
+    }
+
+    function t(key) {
+      return ui[key] || key;
+    }
+
+    function translatedValue(value) {
+      const raw = text(value);
+      return valueLabels[raw] || raw;
+    }
+
+    function translateDirection(value) {
+      const raw = text(value);
+      if (raw === "-") return raw;
+      return raw
+        .replace(/Vision-Language Models|Vision-Language Systems|Vision-Language/g, "视觉语言模型")
+        .replace(/VLM/g, "视觉语言模型")
+        .replace(/Computer Vision/g, "计算机视觉")
+        .replace(/3D Vision/g, "三维视觉")
+        .replace(/Spatial Intelligence/g, "空间智能")
+        .replace(/Spatial Reasoning/g, "空间推理")
+        .replace(/Spatial AI/g, "空间 AI")
+        .replace(/Multimodal AI/g, "多模态 AI")
+        .replace(/Human-Centred|Human-Centered/g, "以人为中心的")
+        .replace(/Human-AI/g, "人机协同")
+        .replace(/HCI/g, "人机交互")
+        .replace(/Interactive/g, "交互式")
+        .replace(/Interaction-Centered/g, "交互中心")
+        .replace(/Knowledge-Guided/g, "知识引导的")
+        .replace(/Explainable/g, "可解释")
+        .replace(/Accessibility-Aware/g, "无障碍感知")
+        .replace(/Accessibility-Focused/g, "无障碍导向")
+        .replace(/Accessibility-First/g, "无障碍优先")
+        .replace(/Accessibility/g, "无障碍")
+        .replace(/Age-Friendly/g, "适老化")
+        .replace(/Aging-in-Place/g, "原居安老")
+        .replace(/Older Adults' Home Safety/g, "老年人居家安全")
+        .replace(/Indoor Environments/g, "室内环境")
+        .replace(/Indoor Environment/g, "室内环境")
+        .replace(/Indoor Spaces/g, "室内空间")
+        .replace(/Indoor Space/g, "室内空间")
+        .replace(/Indoor Assessment/g, "室内评估")
+        .replace(/Indoor Spatial Assessment/g, "室内空间评估")
+        .replace(/Spatial Assessment/g, "空间评估")
+        .replace(/Design Recommendation/g, "设计建议")
+        .replace(/Decision Support/g, "决策支持")
+        .replace(/Risk Assessment/g, "风险评估")
+        .replace(/Fall-Risk/g, "跌倒风险")
+        .replace(/Home Safety/g, "居家安全")
+        .replace(/Health-Facing/g, "健康导向")
+        .replace(/Healthy Aging/g, "健康老龄化")
+        .replace(/Smart-Home/g, "智能家居")
+        .replace(/Mixed-Reality/g, "混合现实")
+        .replace(/Visual Analytics/g, "可视分析")
+        .replace(/Visual-Spatial Sensing/g, "视觉空间感知")
+        .replace(/Image-Based/g, "图像驱动")
+        .replace(/Applied/g, "应用型")
+        .replace(/AI-Assisted/g, "AI 辅助")
+        .replace(/AI Prototypes/g, "AI 原型")
+        .replace(/AI/g, "AI")
+        .replace(/Lightweight Machine Learning/g, "轻量机器学习")
+        .replace(/Neural Computation/g, "神经计算")
+        .replace(/Computational Design/g, "计算设计")
+        .replace(/Design-Science/g, "设计科学")
+        .replace(/Frameworks/g, "框架")
+        .replace(/Scene Understanding/g, "场景理解")
+        .replace(/Tools/g, "工具")
+        .replace(/\s+and\s+/g, "与")
+        .replace(/\s+for\s+/g, "用于")
+        .replace(/\s+with\s+/g, "结合")
+        .replace(/\s+in\s+/g, "在")
+        .replace(/\s+of\s+/g, "的")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function displayRegion(row) {
+      return regionLabels[row.region] || row.region_label || row.region || "-";
+    }
+
+    function displayPositioning() {
+      if (!state.metadata) return t("loading");
+      return ui.positioning || state.metadata.research_positioning;
+    }
+
+    function displayDateTime(value) {
+      return new Date(value).toLocaleString("zh-CN");
+    }
+
+    function applyStaticLanguage() {
+      document.documentElement.lang = "zh-CN";
+      els.pageTitle.textContent = t("title");
+      document.title = t("title");
+      els.positioning.textContent = displayPositioning();
+      els.updatedLabel.textContent = t("datasetUpdated");
+      if (state.metadata) els.updatedAt.textContent = displayDateTime(state.metadata.generated_at);
+      els.search.placeholder = t("searchPlaceholder");
+      els.resetFilters.textContent = t("resetButton");
+      els.emptyState.textContent = t("emptyState");
+      els.closeDrawer.setAttribute("aria-label", t("close"));
+      document.querySelectorAll("th[data-header]").forEach((th) => {
+        th.textContent = ui.tableHeaders[th.dataset.header];
+      });
     }
 
     function normalize(value) {
@@ -741,24 +941,26 @@
 
     function statusClass(value) {
       const raw = String(value || "").toLowerCase();
-      if (raw.includes("sent") || raw.includes("awaiting")) return "sent";
       if (raw.includes("not") || raw.includes("no ")) return "not-sent";
+      if (raw.includes("sent") || raw.includes("awaiting")) return "sent";
       if (raw.includes("needs") || raw.includes("paused")) return "warning";
       return "";
     }
 
-    function optionList(select, values, label) {
+    function optionList(select, values, labelKey, formatter = translatedValue) {
+      const currentValue = select.value;
       select.innerHTML = "";
       const first = document.createElement("option");
       first.value = "";
-      first.textContent = `All ${label}`;
+      first.textContent = ui.all[labelKey];
       select.appendChild(first);
       values.forEach((value) => {
         const option = document.createElement("option");
         option.value = value;
-        option.textContent = value;
+        option.textContent = formatter(value);
         select.appendChild(option);
       });
+      select.value = values.includes(currentValue) ? currentValue : "";
     }
 
     function uniqueValues(key, formatter = (value) => value) {
@@ -796,14 +998,9 @@
       const sPriority = rows.filter((row) => row.priority === "S").length;
       const awaiting = rows.filter((row) => row.result === "Awaiting response").length;
       const needContact = rows.filter((row) => row.first_outreach_status !== "Sent").length;
-      const metrics = [
-        ["Tracked Schools", total, "Current filtered set"],
-        ["First Outreach Sent", sent, "Supervisor-first contact"],
-        ["Awaiting Response", awaiting, "Reply monitoring"],
-        ["Formal Applications", total - notSubmitted, "Submitted packages"],
-        ["S Priority", sPriority, "Highest priority routes"],
-        ["Need Contact Check", needContact, "Paused before outreach"]
-      ];
+      const labels = ui.metrics;
+      const values = [total, sent, awaiting, total - notSubmitted, sPriority, needContact];
+      const metrics = labels.map(([label, note], index) => [label, values[index], note]);
       els.summaryGrid.innerHTML = metrics.map(([label, value, note]) => `
         <article class="metric">
           <div class="metric-label">${label}</div>
@@ -823,21 +1020,32 @@
       });
     }
 
-    function rowMatches(row) {
-      const q = normalize(els.search.value);
-      const haystack = normalize([
+    function searchBlob(row) {
+      return [
         row.school,
         row.region,
+        displayRegion(row),
         row.priority,
         row.program_target,
         row.track,
+        translatedValue(row.track),
         row.research_direction,
+        translateDirection(row.research_direction),
         row.direction_cluster,
+        translatedValue(row.direction_cluster),
         row.primary_supervisor,
         row.current_stage,
+        translatedValue(row.current_stage),
         row.result,
-        row.next_action
-      ].join(" "));
+        translatedValue(row.result),
+        row.next_action,
+        translatedValue(row.next_action)
+      ].join(" ");
+    }
+
+    function rowMatches(row) {
+      const q = normalize(els.search.value);
+      const haystack = normalize(searchBlob(row));
       if (q && !haystack.includes(q)) return false;
       if (els.regionFilter.value && row.region_label !== els.regionFilter.value) return false;
       if (els.priorityFilter.value && row.priority !== els.priorityFilter.value) return false;
@@ -861,15 +1069,15 @@
               <span class="package-name">${text(row.package)}</span>
             </div>
           </td>
-          <td>${text(row.region_label)}</td>
+          <td>${text(displayRegion(row))}</td>
           <td><span class="pill ${priorityClass(row.priority)}">${text(row.priority)}</span></td>
-          <td><span class="pill ${statusClass(row.current_stage)}">${text(row.current_stage)}</span></td>
-          <td><span class="pill ${statusClass(row.result)}">${text(row.result)}</span></td>
+          <td><span class="pill ${statusClass(row.current_stage)}">${translatedValue(row.current_stage)}</span></td>
+          <td><span class="pill ${statusClass(row.result)}">${translatedValue(row.result)}</span></td>
           <td>${text(row.first_outreach_date)}</td>
-          <td>${text(row.research_direction)}</td>
-          <td>${text(row.track)}</td>
+          <td>${translateDirection(row.research_direction)}</td>
+          <td>${translatedValue(row.track)}</td>
           <td>${text(row.primary_supervisor)}</td>
-          <td><div class="next-action">${text(row.next_action)}</div></td>
+          <td><div class="next-action">${translatedValue(row.next_action)}</div></td>
         `;
         tr.addEventListener("click", () => openDrawer(row.id));
         tr.addEventListener("keydown", (event) => {
@@ -877,16 +1085,18 @@
         });
         els.tableBody.appendChild(tr);
       });
-      els.tableCount.textContent = `${rows.length} entries`;
+      els.tableCount.textContent = `${rows.length} ${t("entries")}`;
       els.emptyState.hidden = rows.length !== 0;
     }
 
     function renderAll() {
       state.filtered = state.rows.filter(rowMatches);
+      applyStaticLanguage();
       renderSummary(state.filtered);
-      renderBars(els.stageBars, countBy(state.filtered, "current_stage"), state.filtered.length);
-      renderBars(els.regionBars, countBy(state.filtered, "region_label"), state.filtered.length);
+      renderBars(els.stageBars, countBy(state.filtered, "current_stage", translatedValue), state.filtered.length);
+      renderBars(els.regionBars, countBy(state.filtered, "region", (value) => regionLabels[value] || value || "未指定"), state.filtered.length);
       renderTable(state.filtered);
+      if (state.drawerRowId && els.drawer.classList.contains("open")) openDrawer(state.drawerRowId);
     }
 
     function detailItem(label, value, full = false) {
@@ -901,33 +1111,36 @@
     function openDrawer(id) {
       const row = state.rows.find((item) => item.id === id);
       if (!row) return;
+      state.drawerRowId = id;
       els.drawerTitle.textContent = row.school;
       els.drawerPills.innerHTML = `
         <span class="pill ${priorityClass(row.priority)}">${text(row.priority)}</span>
-        <span class="pill">${text(row.region_label)}</span>
-        <span class="pill ${statusClass(row.current_stage)}">${text(row.current_stage)}</span>
-        <span class="pill ${statusClass(row.result)}">${text(row.result)}</span>
+        <span class="pill">${text(displayRegion(row))}</span>
+        <span class="pill ${statusClass(row.current_stage)}">${translatedValue(row.current_stage)}</span>
+        <span class="pill ${statusClass(row.result)}">${translatedValue(row.result)}</span>
       `;
+      const labels = ui.details;
+      const firstOutreach = `${translatedValue(row.first_outreach_status)} ${row.first_outreach_date ? `于 ${row.first_outreach_date}` : ""}`;
       els.drawerBody.innerHTML = `
         <div class="detail-grid">
-          ${detailItem("Program Target", row.program_target, true)}
-          ${detailItem("Research Direction", row.research_direction, true)}
-          ${detailItem("Direction Cluster", row.direction_cluster)}
-          ${detailItem("Track", row.track)}
-          ${detailItem("Primary Supervisor", row.primary_supervisor)}
-          ${detailItem("First Outreach", `${row.first_outreach_status} ${row.first_outreach_date ? `on ${row.first_outreach_date}` : ""}`)}
-          ${detailItem("Formal Application", row.formal_application_status)}
-          ${detailItem("Funding Status", row.funding_status)}
-          ${detailItem("Interview", row.interview_status)}
-          ${detailItem("Offer", row.offer_status)}
-          ${detailItem("Funding Route", row.funding_route, true)}
-          ${detailItem("Immigration Route", row.immigration_route, true)}
-          ${detailItem("Materials", row.material_status)}
-          ${detailItem("Result", row.result)}
-          ${detailItem("Next Action", row.next_action, true)}
-          ${detailItem("Public Notes", row.public_notes, true)}
-          ${detailItem("Package", row.package)}
-          ${detailItem("Updated", row.updated_at)}
+          ${detailItem(labels.programTarget, row.program_target, true)}
+          ${detailItem(labels.researchDirection, translateDirection(row.research_direction), true)}
+          ${detailItem(labels.directionCluster, translatedValue(row.direction_cluster))}
+          ${detailItem(labels.track, translatedValue(row.track))}
+          ${detailItem(labels.primarySupervisor, row.primary_supervisor)}
+          ${detailItem(labels.firstOutreach, firstOutreach)}
+          ${detailItem(labels.formalApplication, translatedValue(row.formal_application_status))}
+          ${detailItem(labels.fundingStatus, translatedValue(row.funding_status))}
+          ${detailItem(labels.interview, translatedValue(row.interview_status))}
+          ${detailItem(labels.offer, translatedValue(row.offer_status))}
+          ${detailItem(labels.fundingRoute, translatedValue(row.funding_route), true)}
+          ${detailItem(labels.immigrationRoute, translatedValue(row.immigration_route), true)}
+          ${detailItem(labels.materials, translatedValue(row.material_status))}
+          ${detailItem(labels.result, translatedValue(row.result))}
+          ${detailItem(labels.nextAction, translatedValue(row.next_action), true)}
+          ${detailItem(labels.publicNotes, translatedValue(row.public_notes), true)}
+          ${detailItem(labels.package, row.package)}
+          ${detailItem(labels.updated, row.updated_at)}
         </div>
       `;
       els.drawer.classList.add("open");
@@ -937,14 +1150,21 @@
     function closeDrawer() {
       els.drawer.classList.remove("open");
       els.drawer.setAttribute("aria-hidden", "true");
+      state.drawerRowId = null;
     }
 
     function setupControls() {
-      optionList(els.regionFilter, uniqueValues("region_label"), "regions");
+      optionList(els.regionFilter, uniqueValues("region_label"), "regions", (value) => {
+        const row = state.rows.find((item) => item.region_label === value);
+        return row ? displayRegion(row) : value;
+      });
       optionList(els.priorityFilter, uniqueValues("priority"), "priorities");
       optionList(els.stageFilter, uniqueValues("current_stage"), "stages");
       optionList(els.trackFilter, uniqueValues("track"), "tracks");
       optionList(els.resultFilter, uniqueValues("result"), "results");
+    }
+
+    function bindControls() {
       [els.search, els.regionFilter, els.priorityFilter, els.stageFilter, els.trackFilter, els.resultFilter].forEach((control) => {
         control.addEventListener("input", renderAll);
         control.addEventListener("change", renderAll);
@@ -980,18 +1200,18 @@
     async function init() {
       const response = await fetch("phd_applications.json", { cache: "no-store" });
       const data = await response.json();
-      els.positioning.textContent = data.metadata.research_positioning;
-      els.updatedAt.textContent = new Date(data.metadata.generated_at).toLocaleString();
+      state.metadata = data.metadata;
       state.rows = data.applications.map((row) => ({
         ...row,
         region_label: regionLabels[row.region] || row.region
       }));
       setupControls();
+      bindControls();
       renderAll();
     }
 
     init().catch((error) => {
-      els.positioning.textContent = "Could not load phd_applications.json";
+      els.positioning.textContent = t("loadError");
       console.error(error);
     });
   </script>

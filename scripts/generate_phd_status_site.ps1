@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $schoolRoot = Join-Path $repoRoot 'school_packages'
@@ -38,9 +38,25 @@ function Get-Track {
         'hong_kong' { return 'HKPFS / university studentship track' }
         'europe' { return 'Paid doctoral position / funded project track' }
         'australia' { return 'RTP / scholarship track' }
+        'malaysia' { return 'Malaysia supervisor-first PhD track' }
         'usa' { return 'Fully funded PhD track' }
         'uk' { return 'Studentship / scholarship track' }
         default { return 'Supervisor-first PhD track' }
+    }
+}
+
+function Get-RegionLabel {
+    param([string]$Region)
+    switch ($Region) {
+        'australia' { return '澳大利亚' }
+        'canada' { return '加拿大' }
+        'europe' { return '欧洲' }
+        'hong_kong' { return '香港' }
+        'malaysia' { return '马来西亚' }
+        'new_zealand' { return '新西兰' }
+        'uk' { return '英国' }
+        'usa' { return '美国' }
+        default { return $Region }
     }
 }
 
@@ -72,7 +88,7 @@ function Get-PrimarySupervisor {
         if ($line -match '^\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|') {
             $name = $matches[1].Trim()
             $score = $matches[6].Trim()
-            if ($name -ne 'Name' -and $score -notmatch 'Low') {
+            if ($name -ne 'Name' -and $name -notmatch '^-+$' -and $score -notmatch 'Low') {
                 return $name
             }
         }
@@ -154,6 +170,7 @@ foreach ($readme in $readmes) {
         id = $package.Replace('/', '__')
         package = $package
         region = $region
+        region_label = Get-RegionLabel $region
         school = $school
         priority = $priority
         priority_rank = Get-PriorityRank $priority
@@ -188,11 +205,11 @@ foreach ($readme in $readmes) {
 
 $payload = [pscustomobject]@{
     metadata = [pscustomobject]@{
-        title = 'Wen Quan PhD Application Tracker'
+        title = 'Wen Quan 博士申请进度追踪'
         owner = 'Wen Quan'
-        research_positioning = 'Knowledge-guided vision-language models and lightweight spatial intelligence for age-friendly indoor space assessment and design recommendation.'
+        research_positioning = '知识引导的视觉语言模型与轻量化空间智能，用于适老化室内空间评估和设计建议。'
         generated_at = (Get-Date).ToString('yyyy-MM-ddTHH:mm:ssK')
-        public_data_notice = 'Public tracker data excludes contact emails, private documents, API identifiers, and internal notes.'
+        public_data_notice = '公开进度页不包含导师邮箱、私人文件、API 标识符和内部备注。'
     }
     applications = @($apps | Sort-Object priority_rank, region, school)
 }
