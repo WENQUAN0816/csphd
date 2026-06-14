@@ -48,7 +48,21 @@
 .\scripts\generate_phd_status_site.ps1
 ```
 
-当前 tracker 区分了 `first_outreach_status` 和 `formal_application_status`：首轮导师套磁已发送不等于正式申请已递交。
+当前 tracker 区分了 `first_outreach_status` 和 `formal_application_status`：截至 2026-06-14，48 所目标院校的首轮导师套磁邮件均已发送；正式网申仍未递交，需要逐校登录申请系统、上传材料、确认真实性声明并处理可能的申请费。
+
+## 正式网申状态
+
+正式申请不是一封邮件，不能等同于导师套磁。正式网申通常需要：
+
+- 创建或登录学校申请系统账号。
+- 上传护照、学历证明、成绩单、英语成绩、CV、研究计划、作品集等文件。
+- 填写推荐人、资金来源、签证/国籍、研究经历等表格。
+- 勾选真实性/隐私/法律声明。
+- 支付申请费或申请费减免。
+
+正式申请执行清单见：
+
+- [formal_application_submission_plan.md](formal_application_submission_plan.md)
 
 ## 一句话申请叙事
 
