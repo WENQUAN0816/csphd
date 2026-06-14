@@ -25,6 +25,7 @@
 
 ## 文档结构
 
+- [PhD Application Tracker](index.html) - 博士申请进度网站入口，使用 `phd_applications.json` 作为公开进度数据源。
 - [01-申请学校与成功率.md](docs/01-申请学校与成功率.md)
 - [02-学费预算.md](docs/02-学费预算.md)
 - [03-空间智能与世界模型方向.md](docs/03-空间智能与世界模型方向.md)
@@ -32,6 +33,22 @@
 - [05-数据集设计与标注规模.md](docs/05-数据集设计与标注规模.md)
 - [06-下一步行动清单.md](docs/06-下一步行动清单.md)
 - [07-轻量博士路线.md](docs/07-轻量博士路线.md)
+
+## 博士申请进度网站
+
+公开网站文件：
+
+- `index.html` - 可筛选、可搜索、可查看详情的申请进度 dashboard。
+- `phd_applications.json` - 公开安全版申请数据，不包含导师邮箱、Gmail message ID、证件、成绩单、护照、内部日志或私人文件路径。
+- `scripts/generate_phd_status_site.ps1` - 从 `school_packages/` 和本地私有 outreach 记录重新生成公开 JSON。
+
+本地更新数据：
+
+```powershell
+.\scripts\generate_phd_status_site.ps1
+```
+
+当前 tracker 区分了 `first_outreach_status` 和 `formal_application_status`：首轮导师套磁已发送不等于正式申请已递交。
 
 ## 一句话申请叙事
 

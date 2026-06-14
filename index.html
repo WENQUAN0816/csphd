@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wen Quan PhD Application Tracker</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --surface: #ffffff;
+      --surface-2: #eef2f5;
+      --ink: #1b1f23;
+      --muted: #5f6b7a;
+      --line: #d7dde5;
+      --blue: #2563eb;
+      --green: #14835b;
+      --amber: #b7791f;
+      --red: #b42318;
+      --violet: #6d4aff;
+      --cyan: #087ea4;
+      --radius: 8px;
+      --shadow: 0 1px 2px rgba(17, 24, 39, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      letter-spacing: 0;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+    }
+
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 18px 22px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .title-wrap {
+      min-width: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    .subtitle {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+      max-width: 900px;
+    }
+
+    .updated {
+      display: grid;
+      justify-items: end;
+      gap: 5px;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .updated strong {
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .toolbar-band {
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .toolbar {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: grid;
+      grid-template-columns: minmax(240px, 1.4fr) repeat(5, minmax(130px, 0.7fr)) auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .field {
+      min-width: 0;
+      display: grid;
+      gap: 5px;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    input,
+    select {
+      height: 38px;
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--ink);
+      padding: 0 10px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    button:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+    }
+
+    .reset-button {
+      height: 38px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--ink);
+      padding: 0 13px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    main {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 18px 22px 34px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 12px;
+      box-shadow: var(--shadow);
+      min-height: 86px;
+      display: grid;
+      align-content: space-between;
+      gap: 8px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+      min-height: 30px;
+    }
+
+    .metric-value {
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 760;
+    }
+
+    .metric-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    .panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .panel-head {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .panel-title {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 760;
+    }
+
+    .panel-body {
+      padding: 14px;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 190px) 1fr 38px;
+      gap: 10px;
+      align-items: center;
+      min-height: 28px;
+    }
+
+    .bar-label {
+      color: var(--muted);
+      font-size: 12px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .bar-track {
+      height: 10px;
+      background: var(--surface-2);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      background: var(--blue);
+    }
+
+    .bar-count {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-size: 12px;
+      color: var(--ink);
+    }
+
+    .table-panel {
+      overflow: hidden;
+    }
+
+    .table-tools {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow: auto;
+      max-height: calc(100vh - 420px);
+      min-height: 360px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 1180px;
+      background: var(--surface);
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 11px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #f9fafb;
+      color: var(--muted);
+      font-weight: 760;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    tbody tr {
+      cursor: pointer;
+    }
+
+    tbody tr:hover {
+      background: #f7fbff;
+    }
+
+    .school-cell {
+      display: grid;
+      gap: 4px;
+      min-width: 190px;
+    }
+
+    .school-name {
+      font-weight: 720;
+      color: var(--ink);
+    }
+
+    .package-name {
+      color: var(--muted);
+      font-size: 11px;
+      overflow-wrap: anywhere;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 23px;
+      max-width: 100%;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      color: var(--ink);
+      font-size: 11px;
+      line-height: 1.2;
+      white-space: normal;
+    }
+
+    .pill.priority-s {
+      background: #e9f8f1;
+      border-color: #a7dec7;
+      color: var(--green);
+    }
+
+    .pill.priority-a,
+    .pill.priority-a- {
+      background: #eef4ff;
+      border-color: #b8cdfa;
+      color: var(--blue);
+    }
+
+    .pill.priority-b,
+    .pill.priority-b-,
+    .pill.priority-bplus {
+      background: #fff7e6;
+      border-color: #f2d58a;
+      color: var(--amber);
+    }
+
+    .pill.sent,
+    .pill.awaiting {
+      background: #edf7f2;
+      border-color: #addcc5;
+      color: var(--green);
+    }
+
+    .pill.not-sent,
+    .pill.no-offer {
+      background: #f3f4f6;
+      color: var(--muted);
+    }
+
+    .pill.warning {
+      background: #fff7e6;
+      border-color: #f2d58a;
+      color: var(--amber);
+    }
+
+    .next-action {
+      max-width: 320px;
+      color: var(--ink);
+    }
+
+    .drawer {
+      position: fixed;
+      inset: 0;
+      display: none;
+      z-index: 10;
+    }
+
+    .drawer.open {
+      display: block;
+    }
+
+    .drawer-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.38);
+    }
+
+    .drawer-panel {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: min(620px, 100%);
+      background: var(--surface);
+      box-shadow: -8px 0 24px rgba(17, 24, 39, 0.16);
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .drawer-head {
+      border-bottom: 1px solid var(--line);
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .drawer-title {
+      margin: 0;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .close-button {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .drawer-body {
+      overflow: auto;
+      padding: 18px;
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .detail-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 10px;
+      display: grid;
+      gap: 5px;
+      min-width: 0;
+      background: #fbfcfd;
+    }
+
+    .detail-item.full {
+      grid-column: 1 / -1;
+    }
+
+    .detail-label {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 760;
+    }
+
+    .detail-value {
+      font-size: 13px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .empty {
+      min-height: 180px;
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1180px) {
+      .toolbar {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .panel-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .updated {
+        justify-items: start;
+      }
+
+      .toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .bar-row {
+        grid-template-columns: 110px 1fr 32px;
+      }
+
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      main,
+      .toolbar,
+      .topbar-inner {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <div class="title-wrap">
+          <h1>Wen Quan PhD Application Tracker</h1>
+          <p class="subtitle" id="positioning">Loading application data...</p>
+        </div>
+        <div class="updated">
+          <span>Dataset updated</span>
+          <strong id="updatedAt">-</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="toolbar-band">
+      <div class="toolbar" aria-label="Application filters">
+        <div class="field">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="School, supervisor, direction, track">
+        </div>
+        <div class="field">
+          <label for="regionFilter">Region</label>
+          <select id="regionFilter"></select>
+        </div>
+        <div class="field">
+          <label for="priorityFilter">Priority</label>
+          <select id="priorityFilter"></select>
+        </div>
+        <div class="field">
+          <label for="stageFilter">Stage</label>
+          <select id="stageFilter"></select>
+        </div>
+        <div class="field">
+          <label for="trackFilter">Track</label>
+          <select id="trackFilter"></select>
+        </div>
+        <div class="field">
+          <label for="resultFilter">Result</label>
+          <select id="resultFilter"></select>
+        </div>
+        <button class="reset-button" id="resetFilters" type="button">Reset</button>
+      </div>
+    </section>
+
+    <main>
+      <section class="summary-grid" id="summaryGrid" aria-label="Application summary"></section>
+
+      <section class="panel-grid" aria-label="Application charts">
+        <article class="panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Stage Funnel</h2>
+          </div>
+          <div class="panel-body">
+            <div class="bar-list" id="stageBars"></div>
+          </div>
+        </article>
+        <article class="panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Region Distribution</h2>
+          </div>
+          <div class="panel-body">
+            <div class="bar-list" id="regionBars"></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel table-panel" aria-label="Application table">
+        <div class="panel-head">
+          <h2 class="panel-title">Application Entries</h2>
+          <span class="table-tools" id="tableCount">0 entries</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-sort="school">School</th>
+                <th data-sort="region">Region</th>
+                <th data-sort="priority_rank">Priority</th>
+                <th data-sort="current_stage">Stage</th>
+                <th data-sort="result">Result</th>
+                <th data-sort="first_outreach_date">First Outreach</th>
+                <th data-sort="research_direction">Direction</th>
+                <th data-sort="track">Track</th>
+                <th data-sort="primary_supervisor">Supervisor</th>
+                <th data-sort="next_action">Next Action</th>
+              </tr>
+            </thead>
+            <tbody id="appTableBody"></tbody>
+          </table>
+          <div class="empty" id="emptyState" hidden>No matching applications</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <aside class="drawer" id="detailDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <div class="drawer-head">
+        <div>
+          <h2 class="drawer-title" id="drawerTitle"></h2>
+          <div class="pill-row" id="drawerPills"></div>
+        </div>
+        <button class="close-button" id="closeDrawer" type="button" aria-label="Close">x</button>
+      </div>
+      <div class="drawer-body" id="drawerBody"></div>
+    </div>
+  </aside>
+
+  <script>
+    const state = {
+      rows: [],
+      filtered: [],
+      sortKey: "priority_rank",
+      sortDir: "asc"
+    };
+
+    const els = {
+      positioning: document.getElementById("positioning"),
+      updatedAt: document.getElementById("updatedAt"),
+      summaryGrid: document.getElementById("summaryGrid"),
+      stageBars: document.getElementById("stageBars"),
+      regionBars: document.getElementById("regionBars"),
+      tableBody: document.getElementById("appTableBody"),
+      tableCount: document.getElementById("tableCount"),
+      emptyState: document.getElementById("emptyState"),
+      search: document.getElementById("search"),
+      regionFilter: document.getElementById("regionFilter"),
+      priorityFilter: document.getElementById("priorityFilter"),
+      stageFilter: document.getElementById("stageFilter"),
+      trackFilter: document.getElementById("trackFilter"),
+      resultFilter: document.getElementById("resultFilter"),
+      resetFilters: document.getElementById("resetFilters"),
+      drawer: document.getElementById("detailDrawer"),
+      drawerTitle: document.getElementById("drawerTitle"),
+      drawerPills: document.getElementById("drawerPills"),
+      drawerBody: document.getElementById("drawerBody"),
+      closeDrawer: document.getElementById("closeDrawer"),
+      drawerBackdrop: document.getElementById("drawerBackdrop")
+    };
+
+    const regionLabels = {
+      australia: "Australia",
+      canada: "Canada",
+      europe: "Europe",
+      hong_kong: "Hong Kong",
+      new_zealand: "New Zealand",
+      uk: "United Kingdom",
+      usa: "United States"
+    };
+
+    const barColors = ["#2563eb", "#14835b", "#b7791f", "#087ea4", "#6d4aff", "#b42318", "#4b5563"];
+
+    function text(value) {
+      return value === undefined || value === null || value === "" ? "-" : String(value);
+    }
+
+    function normalize(value) {
+      return String(value || "").toLowerCase();
+    }
+
+    function priorityClass(priority) {
+      const cleaned = String(priority || "").toLowerCase().replace("+", "plus");
+      return `priority-${cleaned}`;
+    }
+
+    function statusClass(value) {
+      const raw = String(value || "").toLowerCase();
+      if (raw.includes("sent") || raw.includes("awaiting")) return "sent";
+      if (raw.includes("not") || raw.includes("no ")) return "not-sent";
+      if (raw.includes("needs") || raw.includes("paused")) return "warning";
+      return "";
+    }
+
+    function optionList(select, values, label) {
+      select.innerHTML = "";
+      const first = document.createElement("option");
+      first.value = "";
+      first.textContent = `All ${label}`;
+      select.appendChild(first);
+      values.forEach((value) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+      });
+    }
+
+    function uniqueValues(key, formatter = (value) => value) {
+      return [...new Set(state.rows.map((row) => formatter(row[key])).filter(Boolean))].sort();
+    }
+
+    function countBy(rows, key, formatter = (value) => value || "Unspecified") {
+      const counts = new Map();
+      rows.forEach((row) => {
+        const value = formatter(row[key]);
+        counts.set(value, (counts.get(value) || 0) + 1);
+      });
+      return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    }
+
+    function renderBars(container, counts, total) {
+      container.innerHTML = "";
+      counts.forEach(([label, count], index) => {
+        const row = document.createElement("div");
+        row.className = "bar-row";
+        const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+        row.innerHTML = `
+          <div class="bar-label" title="${label}">${label}</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${barColors[index % barColors.length]}"></div></div>
+          <div class="bar-count">${count}</div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function renderSummary(rows) {
+      const total = rows.length;
+      const sent = rows.filter((row) => row.first_outreach_status === "Sent").length;
+      const notSubmitted = rows.filter((row) => row.formal_application_status === "Not submitted").length;
+      const sPriority = rows.filter((row) => row.priority === "S").length;
+      const awaiting = rows.filter((row) => row.result === "Awaiting response").length;
+      const needContact = rows.filter((row) => row.first_outreach_status !== "Sent").length;
+      const metrics = [
+        ["Tracked Schools", total, "Current filtered set"],
+        ["First Outreach Sent", sent, "Supervisor-first contact"],
+        ["Awaiting Response", awaiting, "Reply monitoring"],
+        ["Formal Applications", total - notSubmitted, "Submitted packages"],
+        ["S Priority", sPriority, "Highest priority routes"],
+        ["Need Contact Check", needContact, "Paused before outreach"]
+      ];
+      els.summaryGrid.innerHTML = metrics.map(([label, value, note]) => `
+        <article class="metric">
+          <div class="metric-label">${label}</div>
+          <div class="metric-value">${value}</div>
+          <div class="metric-note">${note}</div>
+        </article>
+      `).join("");
+    }
+
+    function sortRows(rows) {
+      const dir = state.sortDir === "asc" ? 1 : -1;
+      return [...rows].sort((a, b) => {
+        const av = a[state.sortKey];
+        const bv = b[state.sortKey];
+        if (typeof av === "number" || typeof bv === "number") return ((av || 0) - (bv || 0)) * dir;
+        return String(av || "").localeCompare(String(bv || "")) * dir;
+      });
+    }
+
+    function rowMatches(row) {
+      const q = normalize(els.search.value);
+      const haystack = normalize([
+        row.school,
+        row.region,
+        row.priority,
+        row.program_target,
+        row.track,
+        row.research_direction,
+        row.direction_cluster,
+        row.primary_supervisor,
+        row.current_stage,
+        row.result,
+        row.next_action
+      ].join(" "));
+      if (q && !haystack.includes(q)) return false;
+      if (els.regionFilter.value && row.region_label !== els.regionFilter.value) return false;
+      if (els.priorityFilter.value && row.priority !== els.priorityFilter.value) return false;
+      if (els.stageFilter.value && row.current_stage !== els.stageFilter.value) return false;
+      if (els.trackFilter.value && row.track !== els.trackFilter.value) return false;
+      if (els.resultFilter.value && row.result !== els.resultFilter.value) return false;
+      return true;
+    }
+
+    function renderTable(rows) {
+      const sorted = sortRows(rows);
+      els.tableBody.innerHTML = "";
+      sorted.forEach((row) => {
+        const tr = document.createElement("tr");
+        tr.tabIndex = 0;
+        tr.dataset.id = row.id;
+        tr.innerHTML = `
+          <td>
+            <div class="school-cell">
+              <span class="school-name">${text(row.school)}</span>
+              <span class="package-name">${text(row.package)}</span>
+            </div>
+          </td>
+          <td>${text(row.region_label)}</td>
+          <td><span class="pill ${priorityClass(row.priority)}">${text(row.priority)}</span></td>
+          <td><span class="pill ${statusClass(row.current_stage)}">${text(row.current_stage)}</span></td>
+          <td><span class="pill ${statusClass(row.result)}">${text(row.result)}</span></td>
+          <td>${text(row.first_outreach_date)}</td>
+          <td>${text(row.research_direction)}</td>
+          <td>${text(row.track)}</td>
+          <td>${text(row.primary_supervisor)}</td>
+          <td><div class="next-action">${text(row.next_action)}</div></td>
+        `;
+        tr.addEventListener("click", () => openDrawer(row.id));
+        tr.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") openDrawer(row.id);
+        });
+        els.tableBody.appendChild(tr);
+      });
+      els.tableCount.textContent = `${rows.length} entries`;
+      els.emptyState.hidden = rows.length !== 0;
+    }
+
+    function renderAll() {
+      state.filtered = state.rows.filter(rowMatches);
+      renderSummary(state.filtered);
+      renderBars(els.stageBars, countBy(state.filtered, "current_stage"), state.filtered.length);
+      renderBars(els.regionBars, countBy(state.filtered, "region_label"), state.filtered.length);
+      renderTable(state.filtered);
+    }
+
+    function detailItem(label, value, full = false) {
+      return `
+        <div class="detail-item ${full ? "full" : ""}">
+          <div class="detail-label">${label}</div>
+          <div class="detail-value">${text(value)}</div>
+        </div>
+      `;
+    }
+
+    function openDrawer(id) {
+      const row = state.rows.find((item) => item.id === id);
+      if (!row) return;
+      els.drawerTitle.textContent = row.school;
+      els.drawerPills.innerHTML = `
+        <span class="pill ${priorityClass(row.priority)}">${text(row.priority)}</span>
+        <span class="pill">${text(row.region_label)}</span>
+        <span class="pill ${statusClass(row.current_stage)}">${text(row.current_stage)}</span>
+        <span class="pill ${statusClass(row.result)}">${text(row.result)}</span>
+      `;
+      els.drawerBody.innerHTML = `
+        <div class="detail-grid">
+          ${detailItem("Program Target", row.program_target, true)}
+          ${detailItem("Research Direction", row.research_direction, true)}
+          ${detailItem("Direction Cluster", row.direction_cluster)}
+          ${detailItem("Track", row.track)}
+          ${detailItem("Primary Supervisor", row.primary_supervisor)}
+          ${detailItem("First Outreach", `${row.first_outreach_status} ${row.first_outreach_date ? `on ${row.first_outreach_date}` : ""}`)}
+          ${detailItem("Formal Application", row.formal_application_status)}
+          ${detailItem("Funding Status", row.funding_status)}
+          ${detailItem("Interview", row.interview_status)}
+          ${detailItem("Offer", row.offer_status)}
+          ${detailItem("Funding Route", row.funding_route, true)}
+          ${detailItem("Immigration Route", row.immigration_route, true)}
+          ${detailItem("Materials", row.material_status)}
+          ${detailItem("Result", row.result)}
+          ${detailItem("Next Action", row.next_action, true)}
+          ${detailItem("Public Notes", row.public_notes, true)}
+          ${detailItem("Package", row.package)}
+          ${detailItem("Updated", row.updated_at)}
+        </div>
+      `;
+      els.drawer.classList.add("open");
+      els.drawer.setAttribute("aria-hidden", "false");
+    }
+
+    function closeDrawer() {
+      els.drawer.classList.remove("open");
+      els.drawer.setAttribute("aria-hidden", "true");
+    }
+
+    function setupControls() {
+      optionList(els.regionFilter, uniqueValues("region_label"), "regions");
+      optionList(els.priorityFilter, uniqueValues("priority"), "priorities");
+      optionList(els.stageFilter, uniqueValues("current_stage"), "stages");
+      optionList(els.trackFilter, uniqueValues("track"), "tracks");
+      optionList(els.resultFilter, uniqueValues("result"), "results");
+      [els.search, els.regionFilter, els.priorityFilter, els.stageFilter, els.trackFilter, els.resultFilter].forEach((control) => {
+        control.addEventListener("input", renderAll);
+        control.addEventListener("change", renderAll);
+      });
+      els.resetFilters.addEventListener("click", () => {
+        els.search.value = "";
+        els.regionFilter.value = "";
+        els.priorityFilter.value = "";
+        els.stageFilter.value = "";
+        els.trackFilter.value = "";
+        els.resultFilter.value = "";
+        renderAll();
+      });
+      document.querySelectorAll("th[data-sort]").forEach((th) => {
+        th.addEventListener("click", () => {
+          const key = th.dataset.sort;
+          if (state.sortKey === key) {
+            state.sortDir = state.sortDir === "asc" ? "desc" : "asc";
+          } else {
+            state.sortKey = key;
+            state.sortDir = key === "priority_rank" ? "asc" : "asc";
+          }
+          renderAll();
+        });
+      });
+      els.closeDrawer.addEventListener("click", closeDrawer);
+      els.drawerBackdrop.addEventListener("click", closeDrawer);
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeDrawer();
+      });
+    }
+
+    async function init() {
+      const response = await fetch("phd_applications.json", { cache: "no-store" });
+      const data = await response.json();
+      els.positioning.textContent = data.metadata.research_positioning;
+      els.updatedAt.textContent = new Date(data.metadata.generated_at).toLocaleString();
+      state.rows = data.applications.map((row) => ({
+        ...row,
+        region_label: regionLabels[row.region] || row.region
+      }));
+      setupControls();
+      renderAll();
+    }
+
+    init().catch((error) => {
+      els.positioning.textContent = "Could not load phd_applications.json";
+      console.error(error);
+    });
+  </script>
+</body>
+</html>
